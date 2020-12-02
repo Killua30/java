@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<laptop>
+    <maker>Asus</maker>
+    <model>TUF GAMING</model>
+    <proc>intel i7</proc>
+    <disk>HDD 1TB</disk>
+    <ozu>16GB DDR4</ozu>
+    <monitor>, monitor 1920x1080 black</monitor>
+    <keyboard>, gamer keyboard red </keyboard>
+</laptop>
