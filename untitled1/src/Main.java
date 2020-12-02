@@ -30,8 +30,8 @@ public class Main {
         ExportVisitor exportVisitor = new ExportVisitor();
        FileWriter[] fwmas = new FileWriter[6];
         for(int i=0;i<=5;i++){
-           File f = new File("C:\\Users\\ASUS\\Documents\\GitHub\\java\\untitled1\\src\\files\\" + mas[i].getClass() + ".txt");
-            fwmas[i] = new FileWriter("C:\\Users\\ASUS\\Documents\\GitHub\\java\\untitled1\\src\\files\\" + mas[i].getClass() + ".txt");
+           File f = new File("C:\\Users\\ASUS\\Documents\\GitHub\\java\\untitled1\\src\\files\\" + mas[i].getClass() + ".xml");
+            fwmas[i] = new FileWriter("C:\\Users\\ASUS\\Documents\\GitHub\\java\\untitled1\\src\\files\\" + mas[i].getClass() + ".xml");
             fwmas[i].write(exportVisitor.export(mas[i]));
             fwmas[i].flush();
             fwmas[i].close();
