@@ -1,4 +1,3 @@
-
 public class PortComp extends Computer {
     Keyboard Keyboard;
     Monitor Monitor;

@@ -1,4 +1,3 @@
-
 public class Monoblock extends Desktop {
     Monitor monitor;
     public Monoblock(String maker, String model, String proc, String ram, String disk, Monitor monitor) {

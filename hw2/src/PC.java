@@ -1,4 +1,3 @@
-
 public class PC extends Desktop {
     String videocard;
     public PC(String maker, String model, String proc, String ram, String disk, String videocard) {

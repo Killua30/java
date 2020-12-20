@@ -1,11 +1,9 @@
-
-public class Computer implements Comp {
+public class Computer implements Comp , Comparable<Computer> {
     private String maker;
     private String model;
     private String proc;
     private String ram;
     private String disk;
-
     public String getMaker() {
         return maker;
     }
@@ -48,6 +46,14 @@ public class Computer implements Comp {
     @Override
     public String connect() {
         return "connect:" + toString();
+    }
+    @Override
+    public int compareTo(Computer o) {
+        if( this.maker.compareTo(o.maker)!=0)return this.maker.compareTo(o.maker);
+        else{
+            if(this.model.compareTo(o.model)!=0) return this.model.compareTo(o.model);
+            else return 0;
+        }
     }
 
 }

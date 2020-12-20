@@ -1,4 +1,3 @@
-
 public class Monitor {
     String hd;
     public Monitor(String hd){

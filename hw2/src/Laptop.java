@@ -1,4 +1,3 @@
-
 public class Laptop extends  PortComp {
 
     public Laptop(String maker, String model, String proc, String ram, String disk, Keyboard Keyboard,Monitor Monitor) {

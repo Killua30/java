@@ -1,4 +1,3 @@
-
 public class Server extends  Computer {
     public Server(String maker, String model, String proc, String ram, String disk) {
         super(maker, model, proc, ram, disk);
