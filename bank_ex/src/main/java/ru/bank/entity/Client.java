@@ -3,6 +3,8 @@ package ru.bank.entity;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -36,4 +38,5 @@ public class Client {
     public Double getBalance() {
         return balance;
     }
+
 }

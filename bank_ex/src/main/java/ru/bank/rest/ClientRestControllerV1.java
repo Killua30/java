@@ -4,14 +4,16 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ru.bank.entity.Client;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
+
 @RequestMapping("/api/v1/clients")
-public class DeveloperRestControllerV1 {
-    public List<Client> CLIENTS = Stream.of(
+public class ClientRestControllerV1 {
+    static public List<Client> CLIENTS = Stream.of(
             new Client(1, "Ivan", "13356",25.3),
             new Client(2, "Marat", "223462",1000000.0),
             new Client(3, "Petya", "4436",1.5),
@@ -33,7 +35,9 @@ public class DeveloperRestControllerV1 {
             new Client(8, "Polina", "85724",500.0),
             new Client(9, "Stepa", "95217",0.0),
             new Client(10, "Andrey", "10245852",66666.6) };
-
+    public static   List<Client> getAllClients(){
+        return new ArrayList<Client>(CLIENTS);
+    }
 @RequestMapping("p1")
 public String page1(){
     return "Name: " +Clients[0].getName() + "\r\n" + "Balance: " +Clients[0].getBalance();
@@ -95,19 +99,19 @@ public String page1(){
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('developers:read')")
+    @PreAuthorize("hasAuthority('clients:read')")
     public Client getById(@PathVariable int id) {
-       return CLIENTS.stream().filter(client -> client.getId()==(id))
-               .findFirst()
+        return CLIENTS.stream().filter(client -> client.getId()==(id))
+                .findFirst()
                 .orElse(null);
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('developers:write')")
+    @PreAuthorize("hasAuthority('clients:write')")
     public Client create(@RequestBody Client client) {
-      this.CLIENTS.add(client);
-       return client;
-   }
+        this.CLIENTS.add(client);
+        return client;
+    }
 
 
 

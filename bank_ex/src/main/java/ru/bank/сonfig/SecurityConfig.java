@@ -1,5 +1,4 @@
 package ru.bank.сonfig;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -13,12 +12,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import ru.bank.entity.Client;
 import ru.bank.entity.Role;
-import ru.bank.rest.DeveloperRestControllerV1;
+import ru.bank.rest.ClientRestControllerV1;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
-    DeveloperRestControllerV1 Developer = new DeveloperRestControllerV1();
+    ClientRestControllerV1 Developer = new ClientRestControllerV1();
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -44,12 +43,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 
 
+
                 /*
                 .formLogin()
                 .loginPage("/auth/login").permitAll()
                 .defaultSuccessUrl("/auth/success")
                 .and()
-                .logout()
+
                 .logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout", "POST"))
                 .invalidateHttpSession(true)
                 .clearAuthentication(true)
